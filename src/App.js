@@ -1,12 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      test
-    </div>
-  );
-}
-
-export default App;
+import {airService} from "./components/Servise/airService";
+import {Airs} from "./components/Airs/Airs";
+import {Air} from "./components/air/air";
+import "./App.css"
+const App = () => {
+    return (
+        <div className='desc'>
+            <Airs/>
+        </div>
+    );
+};
+export {App};
