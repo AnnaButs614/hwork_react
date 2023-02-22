@@ -24,9 +24,10 @@ const App = () => {
   // </div>
 
   // )};
-  function App() {
+  // function App() {
     const [cars, setCars] = useState([])
     const [updateCar, setUpdateCar] = useState(null);
+    const [deleteCar, setDeleteCar] = useState(null);
 
     useEffect(() => {
       carService.getAll()
@@ -35,12 +36,12 @@ const App = () => {
 
     return (
         <div className="App">
-          <CarForm setCars={setCars} updateCar={updateCar}/>
+          <CarForm setCars={setCars} updateCar={updateCar} deleteCar={deleteCar}/>
           <hr/>
-          <Cars cars={cars} setUpdateCar={setUpdateCar}/>
+          <Cars cars={cars} setUpdateCar={setUpdateCar} setDeleteCar={setDeleteCar}/>
         </div>
     );
-  }
+  // }
 };
 
 export {App};
