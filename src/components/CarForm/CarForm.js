@@ -21,9 +21,9 @@ const CarForm = ({setCars, updateCar, deleteCar}) => {
             console.log('delete')
             console.log(deleteCar.id);
             carService.delete(deleteCar.id);
-             reset()
+
         }
-    },[]);
+    },[updateCar,deleteCar]);
 
 
 
@@ -31,7 +31,7 @@ const CarForm = ({setCars, updateCar, deleteCar}) => {
         if (updateCar){console.log('update')
             console.log(updateCar.id)
             const {data} = await carService.updateById(updateCar.id,car)
-            reset()
+           // setCars(updateCar,data);
         }
         else if (!updateCar){
         const {data} = await carService.create(car);
