@@ -4,6 +4,7 @@ import {commentService} from "../../service/commentService";
 
 
 
+
 const CommentsDetails = ({postId})=> {
 
         const {comment, setComment} = useState(null);
@@ -12,8 +13,12 @@ const CommentsDetails = ({postId})=> {
         },[])
         return (
             <div>
-                <div>postId:{postId}</div>
-                {/*<div>postBody:{post.body}</div>*/}
+                {/*{comment&&<>*/}
+                {/*<div>postId:{postId}</div>*/}
+                {/*<div>title:{post.title}</div>*/}
+                {/*<div>body:{post.body}</div>*/}
+                {/*</>*/}
+            {/*}*/}
             </div>
 
     );

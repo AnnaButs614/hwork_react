@@ -1,4 +1,5 @@
 import React from 'react';
+import {CommentsDetails} from "../CommentsDetails/CommentsDetails";
 
 const Comment = ({comment}) => {
     const {id, postId, name, body} = comment;
@@ -10,6 +11,7 @@ const Comment = ({comment}) => {
             <div>name:{name}</div>
             <div>body:{body}</div>
             <button onClick={onsubmit}>Post</button>
+            <CommentsDetails/>
         </div>
     );
 };
