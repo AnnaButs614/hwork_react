@@ -1,8 +1,10 @@
 import React from 'react';
-import {CommentsDetails} from "../CommentsDetails/CommentsDetails";
+
+import {Link} from "react-router-dom";
 
 const Comment = ({comment}) => {
     const {id, postId, name, body} = comment;
+
 
     return (
         <div>
@@ -10,8 +12,11 @@ const Comment = ({comment}) => {
             <div>postId:{postId}</div>
             <div>name:{name}</div>
             <div>body:{body}</div>
-            <button onClick={onsubmit}>Post</button>
-            <CommentsDetails/>
+            <Link to = {`/post/${id.toString()}`}>Post</Link>
+
+
+
+
         </div>
     );
 };

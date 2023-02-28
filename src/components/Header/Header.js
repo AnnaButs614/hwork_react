@@ -6,10 +6,10 @@ import {AlbumsPage, CommentsPage, HomePage, NotFoundPage, TodosPage} from "../..
 const Header = () => {
     return (
         <div className={css.Header}>
-            <NavLink to = {''}>HomePage</NavLink>
-                <NavLink to = {'albums'}>AlbumsPage</NavLink>
-                <NavLink to = {'todos'}>TodosPage</NavLink>
-                <NavLink to = {'comments'}>CommentsPage</NavLink>
+            <NavLink to = {''}>Home</NavLink>
+                <NavLink to = {'albums'}>Albums</NavLink>
+                <NavLink to = {'todos'}>Todos</NavLink>
+                <NavLink to = {'comments'}>Comments</NavLink>
 
         </div>
     );

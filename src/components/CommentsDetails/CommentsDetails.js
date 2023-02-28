@@ -1,24 +1,29 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
-import {commentService} from "../../service/commentService";
 
+import {postService} from "../../service";
 
 
 
 const CommentsDetails = ({postId})=> {
 
-        const {comment, setComment} = useState(null);
+        const {post, setPost} = useState(null);
+
+
         useEffect(()=>{
-            commentService.getById(postId).then(({data})=> setComment(data))
+
+            postService.getById(postId).then(({data})=> setPost(data))
+
         },[])
+
         return (
             <div>
-                {/*{comment&&<>*/}
-                {/*<div>postId:{postId}</div>*/}
-                {/*<div>title:{post.title}</div>*/}
-                {/*<div>body:{post.body}</div>*/}
-                {/*</>*/}
-            {/*}*/}
+                {post&&
+                    <>
+                <div>postId:{postId}</div>
+                <div>postTitle:{post.title}</div>
+                <div>postBody:{post.body}</div>
+                    </>
+            }
             </div>
 
     );
