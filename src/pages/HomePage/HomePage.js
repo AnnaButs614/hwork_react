@@ -4,6 +4,7 @@ const HomePage = () => {
     return (
         <div>
             HomePage
+            <p>Hello, everybody!</p>
         </div>
     );
 };
