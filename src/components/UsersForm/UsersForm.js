@@ -4,11 +4,10 @@ import {UserRequest} from "../UsersRequest/UserRequest";
 const UsersForm = () => {
     const {register, handleSubmit, reset, formState: {errors, isValid}} = useForm({mode:'all',})
 
-    const submit = (data) => {
-        //console.log(data)
-         UserRequest.createUsers(data).then(({data})=>console.log(data))
-        reset()
-        }
+    const submit = async (newUser) => {
+
+        const {data} = await UserRequest.create(newUser);
+             }
     return (
         <form onSubmit={handleSubmit(submit)}>
             <input type="text" placeholder="username"{...register('username')}/>

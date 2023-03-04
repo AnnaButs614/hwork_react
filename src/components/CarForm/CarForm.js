@@ -1,12 +1,11 @@
 import React, {useEffect} from 'react';
 
 import {useForm} from "react-hook-form";
-import {options} from "axios";
-import Joi from "joi";
+
 import {carValidator} from "../../validators/CarValidator";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {carService} from "../../services";
-import {App} from "../../App";
+
 
 const CarForm = ({setCars, updateCar, deleteCar}) => {
     const {register, handleSubmit, reset, formState:{errors, isValid}, setValue} = useForm({mode:'all',
@@ -31,7 +30,7 @@ const CarForm = ({setCars, updateCar, deleteCar}) => {
         if (updateCar){console.log('update')
             console.log(updateCar.id)
             const {data} = await carService.updateById(updateCar.id,car)
-           // setCars(updateCar,data);
+
         }
         else if (!updateCar){
         const {data} = await carService.create(car);
@@ -43,14 +42,14 @@ const CarForm = ({setCars, updateCar, deleteCar}) => {
 
         <form onSubmit={handleSubmit (submit)}>
             <input type='text' placeholder={'brand'} {...register('brand')}/>
-            {errors.brand&&<span>error.brand.messages</span>}
+            {errors.brand&&<span>Тільки букви від 1 до 20 символів</span>}
 
             <input type="text" placeholder={'price'} {...register('price')}/>
-            {errors.price&&<span>error.price.messages</span>}
+            {errors.price&&<span>Від 1 до 1000000</span>}
 
             <input type="text" placeholder={'year'} {...register('year')}/>
-            {errors.years&&<span>error.years.messages</span>}
-            {console.log(updateCar)}
+            {errors.year&&<span>Від 1990 до поточного року)</span>}
+
             <button disabled={!isValid}>{updateCar?'Update':'Create'}</button>
 
         </form>

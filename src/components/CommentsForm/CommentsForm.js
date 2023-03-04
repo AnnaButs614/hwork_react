@@ -7,9 +7,9 @@ const CommentsForm = () => {
     const {register, handleSubmit, reset, formState: {errors, isValid}} = useForm({mode:'all',})
 
 
-    const submit = (data) => {
-        CommentsRequest.createComments(data).then(({data})=>console.log(data))
-        reset()
+    const submit = async (comment) => {
+                const {data} = await CommentsRequest.create(comment);
+
     }
     return (
 

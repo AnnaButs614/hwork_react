@@ -12,7 +12,8 @@ import {Comments} from "./components/Comments/Comments";
 import {CommentsForm} from "./components/CommentsForm/CommentsForm";
 
 
-const App = () => {
+//const App = () => {
+  //
   // const [users, setUsers] = useState([]);
   // useEffect(() => {
   //   UserRequest.getAll()
@@ -27,45 +28,48 @@ const App = () => {
   // </div>
   //
   // )};
-
-const [comments, setComments] = useState([]);
-useEffect(() => {
-    CommentsRequest.getAll()
-        .then(({data}) => setComments( ([...data])))
-    console.log(comments);
-},[])
-
-return (
-    <div>
-        <hr/>
-        <CommentsForm/>
-        <hr/>
-        <Comments comments={comments}/>
-
-    </div>
-
-);}
-
-
-
-  // function App() {
-//     const [cars, setCars] = useState([])
-//     const [updateCar, setUpdateCar] = useState(null);
-//     const [deleteCar, setDeleteCar] = useState(null);
 //
-//     useEffect(() => {
-//       carService.getAll()
-//           .then(({data}) => setCars([...data]))
-//     }, [])
+// const [comments, setComments] = useState([]);
+// useEffect(() => {
+//     CommentsRequest.getAll()
+//         .then(({data}) => setComments( ([...data])))
+//     console.log(comments);
+// },[])
 //
-//     return (
-//         <div className="App">
-//           <CarForm setCars={setCars} updateCar={updateCar} deleteCar={deleteCar}/>
-//           <hr/>
-//           <Cars cars={cars} setUpdateCar={setUpdateCar} setDeleteCar={setDeleteCar}/>
-//         </div>
-//     );
-//   // }
-// };
+// return (
+//     <div>
+//         <hr/>
+//         <CommentsForm/>
+//         <hr/>
+//         <Comments comments={comments}/>
+//
+//     </div>
+//
+// );}
+
+
+
+  function App() {
+    const [cars, setCars] = useState([])
+    const [updateCar, setUpdateCar] = useState(null);
+    const [deleteCar, setDeleteCar] = useState(null);
+
+    useEffect(() => {
+      carService.getAll()
+          .then(({data}) => setCars([...data]))
+    }, [])
+
+    return (
+        <div className="App">
+          <CarForm setCars={setCars} updateCar={updateCar} deleteCar={deleteCar}/>
+          <hr/>
+            {cars && <>
+                <Cars cars={cars} setUpdateCar={setUpdateCar} setDeleteCar={setDeleteCar}/>
+            </>
+            }
+        </div>
+    );
+  // }
+};
 
 export {App};
