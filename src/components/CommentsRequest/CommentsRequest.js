@@ -1,10 +1,10 @@
-import axios from "axios";
 import {axiosService} from "../../services";
+import {urls} from "../../config";
 
 const CommentsRequest = {
-    getAll: () => axios.get(axios.comments),
+    getAll: () => axiosService.get(urls.comment)
     // addComments: (data) => axios.post(axios.comments, data)
-    createComments: (data) => axiosService.post(axios.comments, data)
+   // createComments: (data) => axiosService.post(axios.comments, data)
 }
 
 export {CommentsRequest}

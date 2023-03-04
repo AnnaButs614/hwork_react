@@ -6,6 +6,6 @@
 const baseURL = 'https://jsonplaceholder.typicode.com'
 const urls = {
     users : '/users',
-    comment : '/comment'
+    comment : '/comments'
  }
 export {baseURL, urls}

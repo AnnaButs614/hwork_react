@@ -31,15 +31,17 @@ const App = () => {
 const [comments, setComments] = useState([]);
 useEffect(() => {
     CommentsRequest.getAll()
-        .then(({data}) => setComments() ([...data]))
-
+        .then(({data}) => setComments( ([...data])))
+    console.log(comments);
 },[])
 
 return (
     <div>
-        <Comments comments={comments}/>
         <hr/>
         <CommentsForm/>
+        <hr/>
+        <Comments comments={comments}/>
+
     </div>
 
 );}
